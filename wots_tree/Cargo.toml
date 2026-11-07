@@ -1,0 +1,30 @@
+[package]
+name = "wots_tree"
+version = "0.1.0"
+description = """
+A small Merkle tree of WOTS+ one-time keys, built from FIPS 205's
+components through slh-dsa's hazmat API
+"""
+license = "Apache-2.0 OR MIT"
+edition = "2024"
+rust-version = "1.87"
+publish = false
+categories = ["cryptography"]
+keywords = ["crypto", "signature", "wots", "fips205"]
+
+[dependencies]
+sha2 = { version = "0.11", default-features = false, features = ["zeroize"] }
+slh-dsa = { path = "../slh-dsa", default-features = false, features = ["hazmat", "zeroize"] }
+zeroize = { version = "1.8.1", default-features = false }
+
+[dev-dependencies]
+criterion = "0.7"
+hex-literal = "1"
+sha2 = "0.11"
+
+[[bench]]
+name = "tree"
+harness = false
+
+[lints]
+workspace = true

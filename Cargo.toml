@@ -11,6 +11,7 @@ members = [
     "rfc6979",
     "slh-dsa",
     "xmss",
+    "wots_tree",
 ]
 
 [profile.dev]
